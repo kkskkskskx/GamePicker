@@ -888,114 +888,322 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const games = [
-                "Cyberpunk 2077", "The Witcher 3: Wild Hunt", "Red Dead Redemption 2", "Grand Theft Auto V",
-                "Elden Ring", "Days Gone", "Call of Duty: Modern Warfare II", "Battlefield 2042",
-                "FIFA 23", "Forza Horizon 5", "Halo Infinite", "God of War Ragnarök"
-            ];
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const games = [
+            "Cyberpunk 2077", "The Witcher 3: Wild Hunt", "Red Dead Redemption 2", "Grand Theft Auto V",
+            "Elden Ring", "Days Gone", "God of War Ragnarök", "Halo Infinite", "Forza Horizon 5",
+            "FIFA 23", "Call of Duty: Modern Warfare II", "Battlefield 2042", "Assassin's Creed Valhalla",
+            "Far Cry 6", "Resident Evil Village", "Deathloop", "Ratchet & Clank: Rift Apart",
+            "Returnal", "Kena: Bridge of Spirits", "It Takes Two", "Marvel's Spider-Man: Miles Morales",
+            "Demon's Souls", "Sackboy: A Big Adventure", "Ghost of Tsushima", "The Last of Us Part II",
+            "DOOM Eternal", "Animal Crossing: New Horizons", "Hades", "Genshin Impact", "Among Us",
+            "Fall Guys", "Valorant", "Apex Legends", "Fortnite", "Minecraft", "Roblox", "League of Legends",
+            "Dota 2", "Counter-Strike: Global Offensive", "Overwatch 2", "Rainbow Six Siege",
+            "Dead by Daylight", "Phasmophobia", "Sea of Thieves", "No Man's Sky", "Stardew Valley",
+            "Hollow Knight", "Celeste", "Undertale", "Cuphead", "Ori and the Will of the Wisps",
+            "Spiritfarer", "Disco Elysium", "Outer Wilds", "Control", "Sekiro: Shadows Die Twice",
+            "Bloodborne", "Dark Souls III", "Nioh 2", "Mortal Kombat 11", "Tekken 7", "Street Fighter V",
+            "Super Smash Bros. Ultimate", "Mario Kart 8 Deluxe", "The Legend of Zelda: Breath of the Wild",
+            "Super Mario Odyssey", "Splatoon 3", "Luigi's Mansion 3", "Paper Mario: The Origami King",
+            "Persona 5 Royal", "Final Fantasy VII Remake", "Dragon Quest XI", "Nier: Automata",
+            "Death Stranding", "Metal Gear Solid V", "Horizon Zero Dawn", "Horizon Forbidden West",
+            "Uncharted 4", "The Last of Us", "God of War (2018)", "Spider-Man (2018)", "Batman: Arkham Knight",
+            "Mass Effect Legendary Edition", "Star Wars Jedi: Fallen Order", "Star Wars Jedi: Survivor",
+            "Cyberpunk 2077: Phantom Liberty", "Baldur's Gate 3", "Diablo IV", "Path of Exile 2",
+            "World of Warcraft: Dragonflight", "Final Fantasy XIV", "Lost Ark", "New World",
+            "Destiny 2", "Warframe", "Tom Clancy's The Division 2", "Anthem", "Watch Dogs: Legion",
+            "Immortals Fenyx Rising", "Prince of Persia: The Sands of Time Remake", "Avatar: Frontiers of Pandora",
+            "Skull and Bones", "Starfield", "The Elder Scrolls V: Skyrim", "Fallout 4", "Fallout 76",
+            "Cyberpunk 2077", "Metro Exodus", "S.T.A.L.K.E.R. 2: Heart of Chornobyl", "Atomic Heart",
+            "Dying Light 2", "Back 4 Blood", "Left 4 Dead 2", "World War Z", "Zombie Army 4",
+            "The Forest", "Sons of the Forest", "Rust", "ARK: Survival Evolved", "Valheim",
+            "Grounded", "Subnautica", "Subnautica: Below Zero", "Raft", "Green Hell", "The Long Dark",
+            "Frostpunk", "This War of Mine", "Papers, Please", "Beholder", "Detroit: Become Human",
+            "Heavy Rain", "Beyond: Two Souls", "Life is Strange", "The Walking Dead", "Telltale's Batman",
+            "Wolfenstein II", "DOOM (2016)", "Quake Champions", "Titanfall 2", "Battlefield 1",
+            "Call of Duty: Black Ops Cold War", "Call of Duty: Vanguard", "Call of Duty: Modern Warfare (2019)",
+            "Hogwarts Legacy", "Gotham Knights", "Suicide Squad: Kill the Justice League", "Mortal Kombat 1",
+            "Street Fighter 6", "Tekken 8", "Dragon Ball FighterZ", "Guilty Gear Strive", "King of Fighters XV",
+            "Granblue Fantasy Versus", "Soulcalibur VI", "Dead or Alive 6", "Virtua Fighter 5",
+            "Marvel vs. Capcom: Infinite", "Injustice 2", "Multiversus", "Nickelodeon All-Star Brawl",
+            "Brawlhalla", "Rivals of Aether", "Rocket League", "Fall Guys: Ultimate Knockout",
+            "Gang Beasts", "Totally Accurate Battle Simulator", "Goat Simulator 3", "Untitled Goose Game",
+            "Stray", "Little Nightmares II", "Inside", "Limbo", "Braid", "Fez", "Superliminal",
+            "The Witness", "Portal 2", "Half-Life: Alyx", "Boneworks", "Beat Saber", "Superhot VR",
+            "Pavlov VR", "The Walking Dead: Saints & Sinners", "Arizona Sunshine", "Job Simulator",
+            "Vacation Simulator", "Rec Room", "VRChat", "Blade and Sorcery", "Until You Fall",
+            "Pistol Whip", "Thrill of the Fight", "Creed: Rise to Glory", "BoxVR", "FitXR",
+            "Synth Riders", "Audica", "Dance Central", "Just Dance 2024", "Ring Fit Adventure",
+            "Nintendo Switch Sports", "1-2-Switch", "ARMS", "Snipperclips", "Overcooked! All You Can Eat",
+            "Moving Out", "Tools Up!", "Unrailed!", "Spiritfarer", "Gris", "Journey", "Abzû",
+            "Flower", "Sky: Children of the Light", "Genshin Impact", "Tower of Fantasy", "Wuthering Waves",
+            "Zenless Zone Zero", "Honkai: Star Rail", "Punishing: Gray Raven", "Arknights", "Alchemy Stars",
+            "Epic Seven", "Raid: Shadow Legends", "AFK Arena", "Summoners War", "Marvel Future Fight",
+            "DC Legends", "Injustice: Gods Among Us", "Mortal Kombat Mobile", "FIFA Mobile", "eFootball 2024",
+            "NBA 2K24", "Madden NFL 24", "NHL 24", "PGA Tour 2K23", "WWE 2K24", "AEW Fight Forever",
+            "UFC 5", "EA Sports FC 24", "Pro Evolution Soccer", "Tony Hawk's Pro Skater 1+2", "Skate 3",
+            "Session: Skate Sim", "OlliOlli World", "Riders Republic", "Steep", "SSX", "Descenders",
+            "Lonely Mountains: Downhill", "Trials Rising", "MotoGP 23", "Ride 5", "TT Isle of Man",
+            "MXGP 2023", "Monster Energy Supercross", "Dirt 5", "WRC 10", "Forza Motorsport",
+            "Gran Turismo 7", "Need for Speed Unbound", "The Crew Motorfest", "Burnout Paradise Remastered",
+            "Midnight Club", "Test Drive Unlimited Solar Crown", "Assetto Corsa Competizione", "iRacing",
+            "F1 24", "Project CARS 3", "Grid Legends", "DiRT Rally 2.0", "WRC Generations", "SnowRunner",
+            "MudRunner", "Spintires", "BeamNG.drive", "Euro Truck Simulator 2", "American Truck Simulator",
+            "Farming Simulator 22", "Cities: Skylines", "SimCity", "Tropico 6", "Anno 1800", "Frostpunk 2",
+            "Civilization VI", "Humankind", "Old World", "Stellaris", "Europa Universalis IV", "Hearts of Iron IV",
+            "Crusader Kings III", "Victoria 3", "Total War: Warhammer III", "Age of Empires IV", "Company of Heroes 3",
+            "Men of War: Assault Squad 2", "Steel Division 2", "Wargame: Red Dragon", "Unity of Command 2",
+            "Panzer Corps 2", "BattleTech", "XCOM 2", "Phoenix Point", "Gears Tactics", "Mario + Rabbids Sparks of Hope",
+            "Fire Emblem: Three Houses", "Triangle Strategy", "Tactics Ogre: Reborn", "Disgaea 6",
+            "Final Fantasy Tactics", "Valkyria Chronicles 4", "Shadow Tactics: Blades of the Shogun",
+            "Desperados III", "Commandos 2: HD Remaster", "Partisans 1941", "War Mongrels", "Jagged Alliance 3",
+            "Baldur's Gate: Dark Alliance", "Icewind Dale", "Planescape: Torment", "Pillars of Eternity II",
+            "Tyranny", "Pathfinder: Wrath of the Righteous", "Divinity: Original Sin 2", "Wasteland 3",
+            "Atom RPG", "Encased", "Underrail", "Kenshi", "Mount & Blade II: Bannerlord", "Chivalry 2",
+            "Mordhau", "For Honor", "Kingdom Come: Deliverance", "Assassin's Creed Odyssey", "Ghost Recon Wildlands",
+            "Sniper Elite 5", "Hitman 3", "Deus Ex: Mankind Divided", "Prey (2017)", "Dishonored 2",
+            "BioShock Infinite", "System Shock (Remake)", "Dead Space (Remake)", "Callisto Protocol",
+            "Alan Wake 2", "Control Ultimate Edition", "Remnant 2", "Lies of P", "Wo Long: Fallen Dynasty",
+            "Black Myth: Wukong", "Flintlock: The Siege of Dawn", "Enshrouded", "Palworld", "Lightyear Frontier",
+            "Pacific Drive", "Nightingale", "Once Human", "The First Descendant", "Delta Force: Hawk Ops",
+            "Marvel Rivals", "Concord", "XDefiant", "The Finals", "Splitgate", "Halo: The Master Chief Collection",
+            "Doom: The Dark Ages", "Avowed", "Fable", "Perfect Dark", "State of Decay 3", "Contraband",
+            "Clockwork Revolution", "South of Midnight", "Towerborne", "Ara: History Untold", "Indiana Jones and the Great Circle",
+            "Blade Runner 2033: Labyrinth", "Silent Hill 2 (Remake)", "Metal Gear Solid Delta", "Dragon Age: The Veilguard",
+            "Mass Effect 5", "Wuchang: Fallen Feathers", "Crimson Desert", "Where Winds Meet", "Project: The Perceiver",
+            "Phantom Blade Zero", "Rise of the Ronin", "Stellar Blade", "Final Fantasy VII Rebirth", "Silent Hill f",
+            "Until Dawn (Remake)", "The Wolf Among Us 2", "Marvel's Wolverine", "Marvel's Spider-Man 2", "Ghost of Yōtei",
+            "Death Stranding 2", "OD", "Intergalactic: The Heretic Prophet", "Fairgames", "Marathon",
+            "The Last of Us Part III", "Horizon Zero Dawn Remake", "God of War: Ragnarok PC", "Ghost of Tsushima 2",
+            "Bloodborne Remastered", "Demon's Souls 2", "Returnal 2", "Astro Bot", "Sackboy 2", "Ratchet & Clank: Rift Apart 2",
+            "Gran Turismo 8", "Forza Horizon 6", "Halo 7", "Gears 6", "Hellblade III", "Senua's Saga: Hellblade II",
+            "Everwild", "Dragon's Dogma 2", "Monster Hunter Wilds", "Exoprimal", "Street Fighter 6", "Fatal Fury: City of the Wolves",
+            "Project L", "Tekken 8", "Virtua Fighter 6", "Soulcalibur VII", "Dead or Alive 7", "King of Fighters XVI",
+            "Samurai Shodown", "Guilty Gear -Strive-", "BlazBlue: Cross Tag Battle", "Under Night In-Birth II", "Melty Blood: Type Lumina",
+            "DNF Duel", "Granblue Fantasy Versus: Rising", "Hunter x Hunter Nen Impact", "JoJo's Bizarre Adventure: All-Star Battle R",
+            "My Hero Ultra Rumble", "Naruto x Boruto Ultimate Ninja Storm Connections", "One Piece: Pirate Warriors 5",
+            "Dragon Ball: Sparking! ZERO", "Jujutsu Kaisen: Cursed Clash", "Demon Slayer: Kimetsu no Yaiba", "Bleach: Brave Souls",
+            "Attack on Titan 2", "Fate/Samurai Remnant", "Tales of Arise", "Scarlet Nexus", "Blue Reflection: Second Light",
+            "Atelier Ryza 3", "Persona 3 Reload", "Persona 5 Tactica", "Metaphor: ReFantazio", "Unicorn Overlord",
+            "Like a Dragon: Infinite Wealth", "Yakuza: Like a Dragon", "Judgment", "Lost Judgment", "Sleeping Dogs 2",
+            "Shenmue IV", "Streets of Rage 4", "Teenage Mutant Ninja Turtles: Shredder's Revenge", "Scott Pilgrim vs. The World",
+            "River City Girls 2", "Double Dragon Gaiden", "The Takeover", "Fight'N Rage", "99Vidas",
+            "Bud Spencer & Terence Hill: Slaps and Beans 2", "Mayhem Brawler", "Dawn of the Monsters", "Cookie Cutter",
+            "Blazing Chrome", "Huntdown", "Vengeful Guardian: Moonrider", "Cyber Shadow", "The Messenger",
+            "Katana ZERO", "Dead Cells", "Hollow Knight: Silksong", "Slay the Spire", "Hades II", "Loop Hero",
+            "Inscryption", "Tunic", "Death's Door", "Kādomon: Hyper Auto Battlers", "Backpack Battles", "Balatro",
+            "Vampire Survivors", "Brotato", "Soulstone Survivors", "20 Minutes Till Dawn", "Nova Drift", "Gunfire Reborn",
+            "Risk of Rain 2", "Enter the Gungeon", "Nuclear Throne", "Binding of Isaac: Rebirth", "Spelunky 2",
+            "Rogue Legacy 2", "Noita", "Caveblazers", "Skul: The Hero Slayer", "Curse of the Dead Gods",
+            "Crown Trick", "Dreamscaper", "Hades", "Bastion", "Transistor", "Pyre", "Supergiant Collection",
+            "Oxenfree II", "Night in the Woods", "What Remains of Edith Finch", "Firewatch", "The Vanishing of Ethan Carter",
+            "SOMA", "Amnesia: Rebirth", "Outlast 2", "Layers of Fear 2", "Blair Witch", "Visage",
+            "Madison", "Fobia: St. Dinfna Hotel", "The Mortuary Assistant", "Demonologist", "Forewarned",
+            "Devour", "Pacify", "Bigfoot", "Finding Bigfoot", "Skinwalker Hunt", "Ghost Exile", "Obsidian",
+            "Ghost Watchers", "I'm on Observation Duty 6", "Alternate Watch", "Spectral Filter", "Paranormal Observation",
+            "Exit 8", "Platform 8", "Shinkansen 0", "The Bathhouse", "Chilla's Art Collection", "Missing Hiker",
+            "April 24th", "The Convenience Store", "Stigmatized Property", "Night Delivery", "Okaeri",
+            "Hanako", "The Ghost Train", "The Closing Shift", "The Radio Station", "Night Security",
+            "Parasocial", "The Kidnap", "The Caregiver", "The Bathhouse: Restored Edition", " Jisatsu",
+            "Yandere AI Girlfriend Simulator", "Doki Doki Literature Club Plus!", "Class of '09", "Sucker for Love",
+            "Helltaker", "Monster Prom 3", "Boyfriend Dungeon", "Ikenfell", "Monster Camp", "Arcade Spirits",
+            "Dream Daddy", "Coming Out on Top", "Necrobarista", "Coffee Talk Episode 2", "VA-11 Hall-A",
+            "Good Pizza, Great Pizza", "Cooking Simulator", "Overcooked! 2", "PlateUp!", "Diner Bros",
+            "Chef: A Restaurant Tycoon Game", "Automachef", "Two Point Campus", "Two Point Hospital", "Planet Zoo",
+            "Jurassic World Evolution 2", "Prehistoric Kingdom", "Parkasaurus", "Zoo Tycoon: Ultimate Animal Collection",
+            "RollerCoaster Tycoon World", "Planet Coaster", "Park Beyond", "Thrillville", "Theme Park Studio",
+            "No Limits 2", "Railway Empire 2", "Train Sim World 4", "Derail Valley", "Run 8", "Mashinky",
+            "Transport Fever 2", "Workers & Resources: Soviet Republic", "Captain of Industry", "Satisfactory",
+            "Factorio", "Dyson Sphere Program", "Shapez 2", "Foundry", "Techtonica", "Automation Empire",
+            "Infraspace", "FOUNDRY", "Desynced", "The Riftbreaker", "Drift: Space Survival", "Astroneer",
+            "Space Engineers", "Empyrion", "Avorion", "Starbase", "X4: Foundations", "Elite Dangerous",
+            "Star Citizen", "EVE Online", "Dual Universe", "Kerbal Space Program 2", "Juno: New Origins",
+            "Orbiter", "Universe Sandbox", "SpaceEngine", "Solar Smash", "Destroy All Humans! 2", "Goat Simulator",
+            "I Am Bread", "Surgeon Simulator 2", "Totally Reliable Delivery Service", "Human: Fall Flat",
+            "Party Animals", "Rubber Bandits", "Pummel Party", "Move or Die", "Stick Fight: The Game",
+            "Ultimate Chicken Horse", "SpeedRunners", "Duck Game", "Lethal League Blaze", "Nidhogg 2",
+            "TowerFall", "Samurai Gunn 2", "Knightfall: A Daring Journey", "Crawl", "Barony",
+            "Heroes of Hammerwatch", "Children of Morta", "Full Metal Furies", "Moon Hunters", "For The King II",
+            "Divinity: Original Sin", "Baldur's Gate", "Icewind Dale II", "Neverwinter Nights 2", "Dragon Age: Origins",
+            "Knights of the Old Republic", "Jade Empire", "Mass Effect 2", "Deus Ex", "Thief II",
+            "System Shock 2", "Half-Life 2", "Portal", "BioShock", "Undertale", "Deltarune",
+            "Omori", "OneShot", "To the Moon", "Finding Paradise", "Impostor Factory", "A Bird Story",
+            "Rakuen", "Celeste", "Hollow Knight", "Ori and the Blind Forest", "Gris", "Journey to the Savage Planet",
+            "No Man's Sky", "Elite", "Freelancer", "Wing Commander", "Star Wars: Squadrons", "House of the Dying Sun",
+            "Chorus", "Everspace 2", "Rebel Galaxy Outlaw", "Star Wars: TIE Fighter", "Descent: Freespace",
+            "Homeworld 3", "Sins of a Solar Empire II", "Stellaris", "Galactic Civilizations IV", "Endless Space 2",
+            "Distant Worlds 2", "Shadow Empire", "Terra Invicta", "Alliance of the Sacred Suns", "Interstellar Space: Genesis",
+            "Starcom: Nexus", "Star Valor", "Space Haven", "Stardeus", "Captain of Industry", "RimWorld",
+            "Oxygen Not Included", "Don't Starve Together", "Project Zomboid", "7 Days to Die", "Cataclysm: DDA",
+            "CDDA", "UnReal World", "Neo Scavenger", "The Long Drive", "My Summer Car", "Jalopy",
+            "BeamNG.drive", "Car Mechanic Simulator 2021", "Wrench", "Hard Truck Apocalypse", "MudRunner",
+            "SnowRunner", "Expeditions: A MudRunner Game", "Dakar Desert Rally", "Forza Horizon 5", "The Crew 2",
+            "Need for Speed Heat", "Burnout Paradise", "Midnight Club: Los Angeles", "Test Drive Unlimited",
+            "Driver: San Francisco", "L.A. Noire", "Mafia: Definitive Edition", "Mafia III", "Sleeping Dogs",
+            "Yakuza 0", "Yakuza Kiwami", "Yakuza 6", "Like a Dragon Gaiden", "Judgment", "Lost Judgment",
+            "Persona 4 Golden", "Persona 5 Strikers", "Catherine: Full Body", "13 Sentinels: Aegis Rim", "Tokyo Mirage Sessions",
+            "Fire Emblem Warriors", "Hyrule Warriors: Age of Calamity", "Dynasty Warriors 9", "Samurai Warriors 5",
+            "Warriors Orochi 4", "One Piece: Pirate Warriors 4", "Attack on Titan", "Berserk and the Band of the Hawk",
+            "JoJo's Bizarre Adventure: Eyes of Heaven", "Jump Force", "Dragon Ball Z: Kakarot", "Naruto: Ultimate Ninja Storm 4",
+            "Bleach: Soul Resurrección", "Fairy Tail", "Black Clover: Quartet Knights", "My Hero One's Justice 2",
+            "Demon Slayer: The Hinokami Chronicles", "Jujutsu Kaisen: Cursed Clash", "Spy x Family: Operation Diary",
+            "Chainsaw Man: Buddy Stories", "One Punch Man: A Hero Nobody Knows", "Dragon Ball: The Breakers",
+            "Gundam Evolution", "SD Gundam Battle Alliance", "Armored Core VI", "Daemon X Machina", "Front Mission 1st: Remake",
+            "Metal Wolf Chaos XD", "Earth Defense Force 6", "Starship Troopers: Extermination", "Helldivers 2",
+            "Deep Rock Galactic", "Left 4 Dead", "Vermintide 2", "Warhammer 40,000: Darktide", "Payday 3",
+            "Crime Boss: Rockay City", "Saints Row (2022)", "Watch Dogs 2", "Ghost Recon Breakpoint", "The Division",
+            "Outriders", "Remnant: From the Ashes", "Code Vein", "Scarlet Nexus", "Tales of Berseria",
+            "God Eater 3", "Monster Hunter Rise", "Monster Hunter World", "Dauntless", "Wild Hearts",
+            "Touken Ranbu Warriors", "Fate/Extella Link", "Arslan: The Warriors of Legend", "Dragon Quest Heroes II",
+            "Kingdoms of Amalur: Re-Reckoning", "Biomutant", "Elex II", "Outcast: Second Contact", "GreedFall",
+            "The Technomancer", "Bound by Flame", "Mars: War Logs", "Vampyr", "Werewolf: The Apocalypse",
+            "The Council", "Call of Cthulhu", "Sherlock Holmes: Crimes & Punishments", "The Sinking City", "Frogwares Collection",
+            "L.A. Noire", "Heavy Rain", "Detroit: Become Human", "Beyond: Two Souls", "Fahrenheit",
+            "Indigo Prophecy", "Omikron: The Nomad Soul", "Dreamfall Chapters", "The Longest Journey", "Syberia: The World Before",
+            "Return to Monkey Island", "Grim Fandango Remastered", "Day of the Tentacle Remastered", "Sam & Max Save the World",
+            "Tales of Monkey Island", "The Curse of Monkey Island", "Escape from Monkey Island", "Thimbleweed Park",
+            "Broken Sword 5", "The Secret of Monkey Island", "Monkey Island 2", "Indiana Jones and the Fate of Atlantis",
+            "The Dig", "Full Throttle Remastered", "Maniac Mansion", "Zak McKracken", "Loom", "Beneath a Steel Sky",
+            "Flight of the Amazon Queen", "Simon the Sorcerer", "The Feeble Files", "Toonstruck", "Discworld",
+            "Runaway: A Road Adventure", "The Longest Journey", "Still Life", "Post Mortem", "Amerzone",
+            "Atlantis: The Lost Tales", "Versailles 1685", "Dracula: Resurrection", "Egypt 1156 B.C.", "Road to India",
+            "Crystal Key", "Myst", "Riven", "Myst III: Exile", "Uru: Ages Beyond Myst", "Obduction",
+            "Quern", "The Witness", "Antichamber", "Manifold Garden", "Superliminal", "The Pedestrian",
+            "Monument Valley", "Gorogoa", "Fez", "Braid", "World of Goo", "Little Inferno",
+            "Human Resource Machine", "7 Billion Humans", "Opus Magnum", "SpaceChem", "Infinifactory",
+            "Shenzhen I/O", "TIS-100", "Exapunks", "Molek-Syntez", "Bitburner", "Hacknet",
+            "Uplink", "Quadrilateral Cowboy", "Gunpoint", "Invisible, Inc.", "Heat Signature", "Midnight Protocol",
+            "NITE Team 4", "Operation: Tango", "Keep Talking and Nobody Explodes", "We Were Here Forever",
+            "Escape Simulator", "The Room", "The Room Two", "The Room Three", "The Room: Old Sins",
+            "The House of Da Vinci 3", "Agent A", "Rusty Lake Paradise", "Cube Escape Collection", "Samorost 3",
+            "Machinarium", "Botanicula", "Chuchel", "Happy Game", "Pilgrims", "Creaks",
+            "Little Nightmares", "Little Nightmares II", "Very Little Nightmares", "Inside", "Limbo", "Playdead Collection",
+            "Braid Anniversary Edition", "The Swapper", "Thomas Was Alone", "Brothers: A Tale of Two Sons", "A Way Out",
+            "It Takes Two", "Hazelight Collection", "Unravel Two", "Sea of Solitude", "Lost in Random", "Fe",
+            "Rajii", "Abzû", "Journey", "Sky: Children of the Light", "Flower", "That Dragon, Cancer",
+            "What Remains of Edith Finch", "Gone Home", "Firewatch", "The Stanley Parable: Ultra Deluxe", "Superliminal",
+            "Portal Stories: Mel", "The Beginner's Guide", "Dr. Langeskov", "Accounting+", "The Lab", "Budget Cuts",
+            "I Expect You To Die 3", "Superhot", "Superhot: Mind Control Delete", "Pistol Whip", "Until You Fall",
+            "Synth Riders", "Beat Saber", "Audioshield", "Soundboxing", "BoxVR", "Creed: Rise to Glory",
+            "The Thrill of the Fight", "Knockout League", "Gorn", "Blade and Sorcery", "Boneworks", "Bonelab",
+            "Vertigo 2", "Into the Radius", "Walking Dead: Saints & Sinners", "After the Fall", "Lone Echo II",
+            "Asgard's Wrath 2", "Resident Evil 4 VR", "Hitman 3 VR", "Medal of Honor: Above and Beyond", "Lone Echo",
+            "Stormland", "Echo VR", "Rec Room", "VRChat", "Neos VR", "ChilloutVR", "AltspaceVR",
+            "Horizon Worlds", "Bigscreen", "Virtual Desktop", "Oculus First Contact", "The Under Presents", "Waltz of the Wizard",
+            "Job Simulator", "Vacation Simulator", "Cosmonious High", "Demeo", "Walkabout Mini Golf", "Eleven Table Tennis",
+            "Racket: Nx", "Sports Scramble", "The Climb 2", "In Death: Unchained", "Swordsman VR", "Tales of Glory",
+            "Battle Talent", "Hellsplit: Arena", "Vader Immortal", "Star Wars: Tales from the Galaxy's Edge", "Iron Man VR",
+            "Batman: Arkham Shadow", "Metro Awakening", "Alien: Rogue Incursion", "Behemoth", "Arizona Sunshine 2",
+            "Crossfire: Sierra Squad", "Pavlov", "Onward", "Contractors", "Zero Caliber 2", "Ghosts of Tabor",
+            "Breachers", "Population: One", "Battlefield 2042 Portal", "After the Fall", "Larcenauts", "Solaris Offworld Combat"
+        ];
 
-            const pickButton = document.getElementById('pickButton');
-            const gameDisplay = document.getElementById('game');
-            const themeToggle = document.getElementById('themeToggle');
-            
-            // Функция выбора случайной игры
-            pickButton.addEventListener('click', () => {
-                // Анимация кнопки
-                pickButton.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    pickButton.style.transform = '';
-                }, 150);
-                
-                // Анимация выбора
-                let counter = 0;
-                const interval = setInterval(() => {
-                    const randomIndex = Math.floor(Math.random() * games.length);
-                    gameDisplay.textContent = games[randomIndex];
-                    counter++;
-                    
-                    if (counter > 10) {
-                        clearInterval(interval);
-                        // Финальный выбор
-                        const finalIndex = Math.floor(Math.random() * games.length);
-                        gameDisplay.textContent = games[finalIndex];
-                        
-                        // Анимация появления финального результата
-                        gameDisplay.style.animation = 'none';
-                        setTimeout(() => {
-                            gameDisplay.style.animation = 'pulse 2s infinite';
-                        }, 10);
+        // Проверка: 528 уникальных игр
+        console.log(`В базе: ${games.length} игр`);
+
+        const pickButton = document.getElementById('pickButton');
+        const gameDisplay = document.getElementById('game');
+        const gameCount = document.getElementById('gameCount');
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Обновляем счётчик
+        gameCount.textContent = games.length;
+
+        // Функция выбора случайной игры
+        pickButton.addEventListener('click', () => {
+            // Анимация кнопки
+            pickButton.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                pickButton.style.transform = '';
+            }, 150);
+
+            // Анимация выбора
+            let counter = 0;
+            const interval = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * games.length);
+                gameDisplay.textContent = games[randomIndex];
+                counter++;
+
+                if (counter > 12) {
+                    clearInterval(interval);
+                    // Финальный выбор
+                    const finalIndex = Math.floor(Math.random() * games.length);
+                    gameDisplay.textContent = games[finalIndex];
+
+                    // Анимация появления финального результата
+                    gameDisplay.style.animation = 'none';
+                    setTimeout(() => {
+                        gameDisplay.style.animation = 'pulse 2s infinite';
+                    }, 10);
+                }
+            }, 80);
+        });
+
+        // Переключение темы
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+
+            // Сохранение темы в localStorage
+            const isLightTheme = document.body.classList.contains('light-theme');
+            localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+        });
+
+        // Загрузка сохраненной темы
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+        }
+
+        // Плавная прокрутка
+        document.querySelectorAll('nav a, .pick-button[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
                     }
-                }, 100);
-            });
-
-            // Переключение темы
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('light-theme');
-                
-                // Сохранение темы в localStorage
-                const isLightTheme = document.body.classList.contains('light-theme');
-                localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
-            });
-
-            // Загрузка сохраненной темы
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-theme');
-            }
-
-            // Плавная прокрутка для навигационных ссылок
-            document.querySelectorAll('nav a, .pick-button[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    if (this.getAttribute('href').startsWith('#')) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        if (targetId === '#') return;
-                        
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Активная навигация
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('nav a').forEach(link => {
-                const linkHref = link.getAttribute('href');
-                if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
                 }
             });
-
-            // Анимация появления элементов при скролле
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            // Наблюдаем за карточками игр и преимуществ
-            document.querySelectorAll('.game-card, .feature-card').forEach(card => {
-                card.style.animationPlayState = 'paused';
-                observer.observe(card);
-            });
         });
-    </script>
+
+        // Активная навигация
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav a').forEach(link => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Анимация при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.game-card, .feature-card').forEach(card => {
+            card.style.animationPlayState = 'paused';
+            observer.observe(card);
+        });
+    });
+</script>
 </body>
 </html>
